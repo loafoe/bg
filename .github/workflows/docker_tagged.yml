@@ -41,8 +41,7 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: loafoe/bg:latest,loafoe/bg:${{ steps.vars.outputs.tag }}
-          build-args: |
-            - VERSION=${{ steps.vars.outputs.tag }}
+          build-args: VERSION=${{ steps.vars.outputs.tag }}
           cache-from: type=registry,ref=loafoe/bg:latest
       -
         name: Image digest
