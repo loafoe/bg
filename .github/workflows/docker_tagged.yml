@@ -40,7 +40,7 @@ jobs:
           file: ./Dockerfile
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: philipslabs/hsdp-function-hello-world:${{ steps.vars.outputs.tag }}
+          tags: loafoe/bg:${{ steps.vars.outputs.tag }}
           build-args: |
             - VERSION=${{ steps.vars.outputs.tag }}
       -
