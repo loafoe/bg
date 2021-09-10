@@ -1,4 +1,4 @@
-FROM golang:1.17.0-alpine3.13 AS build
+FROM golang:1.17.1-alpine3.13 AS build
 ARG VERSION
 ENV VERSION=${VERSION}
 WORKDIR /src
@@ -8,7 +8,7 @@ RUN go mod download
 COPY . .
 RUN go build -o /src/bg -ldflags "-X main.Version=${VERSION}" .
 
-FROM golang:1.17.0-alpine3.13
+FROM golang:1.17.1-alpine3.13
 RUN apk add --no-cache tzdata ca-certificates
 ENV HOME /root
 WORKDIR /app
